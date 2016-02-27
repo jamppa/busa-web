@@ -6,7 +6,7 @@
   "scripts": {
     "stats": "webpack --profile --json > stats.json",
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --progress --colors"
   },
   "keywords": [],
   "author": "",
