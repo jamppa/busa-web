@@ -1,5 +1,5 @@
 {
-  "name": "busa_server",
+  "name": "busa-web",
   "version": "0.0.0",
   "description": "Web app for Matkahuolto bus timetables",
   "main": "index.js",
@@ -28,7 +28,10 @@
     "webpack-merge": "^0.7.3"
   },
   "dependencies": {
+    "material-ui": "^0.14.4",
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "react-grid-layout": "^0.10.8",
+    "react-tap-event-plugin": "^0.2.2"
   }
 }
