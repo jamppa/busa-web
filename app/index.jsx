@@ -1,8 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Router, Route, hashHistory} from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import App from './components/app.jsx';
+import App from './app.jsx';
 
 injectTapEventPlugin();
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const BusaRouter = React.createClass({
+
+  renderRouter() {
+    return(
+      <Router history={hashHistory}>
+          <Route path="/" component={App} />
+      </Router>
+    );
+  },
+
+  render() {
+    return this.renderRouter();
+  }
+
+});
+
+ReactDOM.render(<BusaRouter />, document.getElementById('app'));
