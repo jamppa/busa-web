@@ -67,7 +67,7 @@ if(TARGET === 'start' || !TARGET) {
         {
           test: /\.css$/,
           loaders: ['style', 'css'],
-          include: PATHS.app
+          include: [PATHS.app, 'node_modules/purecss/build/']
         }
       ]
     },

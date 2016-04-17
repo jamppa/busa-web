@@ -1,6 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@import url('../../node_modules/purecss/build/pure-min.css');
+@import url('../../node_modules/purecss/build/grids-responsive-min.css');
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #e3e3e3;
+  background: #ffffff;
 }
