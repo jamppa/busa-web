@@ -5,6 +5,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import App from './app.jsx';
 import DeparturingNext from './views/departuring-next.jsx';
 
+import './styles/main.css';
+
 injectTapEventPlugin();
 
 const BusaRouter = React.createClass({

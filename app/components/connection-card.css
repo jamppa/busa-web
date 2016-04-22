@@ -1,0 +1,27 @@
+.connection-card-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.connection {
+  margin: 0.5em;
+}
+
+.connection-card-container .connection span {
+  display: block;
+  
+}
+
+.connection-card-container .connection-time {
+  background-color: #607d8b;
+  color: #fff;
+  border-color: #455a64;
+  border-style: solid;
+  border-width: 1px 0px 0px 0px;
+}
+
+.connection-card-container .connection-time span {
+  display: block;
+  margin: 1em;
+  font-size: 16px;
+}
