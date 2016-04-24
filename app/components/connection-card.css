@@ -5,11 +5,11 @@
 
 .connection {
   margin: 0.5em;
+  color: #616161;
 }
 
 .connection-card-container .connection span {
   display: block;
-  
 }
 
 .connection-card-container .connection-time {

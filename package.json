@@ -7,7 +7,7 @@
     "stats": "webpack --profile --json > stats.json",
     "build": "webpack",
     "start": "webpack-dev-server --progress --colors",
-    "test": "mocha --compilers js:babel-core/register \"test/**/*@(.js|.jsx)\"",
+    "test": "mocha --compilers css:./test/css-import-to-noop.js,js:babel-core/register \"test/**/*@(.js|.jsx)\"",
     "test:tdd": "npm run test -- --watch"
   },
   "keywords": [],
