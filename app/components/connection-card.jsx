@@ -4,6 +4,15 @@ import './connection-card.css';
 
 export default React.createClass({
 
+  getDefaultProps: function () {
+    return {
+      connection: {
+        from: {},
+        to: {}
+      }
+    }
+  },
+
   style: {
     textAlign: 'center',
     fontSize: 'x-large',
@@ -15,9 +24,9 @@ export default React.createClass({
         <Paper zDepth={2} style={this.style}>
           <div className="connection-card-container">
             <div className="connection">
-              <span>Nummela</span>
+              <span>{ this.props.connection.from.name }</span>
               <span>-</span>
-              <span>Helsinki</span>
+              <span>{ this.props.connection.to.name }</span>
             </div>
             <div className="connection-time">
               <span>08:00 - 08:45 (45min)</span>
