@@ -29,4 +29,13 @@ describe('ConnectionCard Component', () => {
     expect(renderedComponent.first().childAt(0).childAt(0).text()).to.eql('Nummela-Helsinki');
   });
 
+  it('should render connection time container with time', () => {
+    
+    const conn = {from: {time: '2016-04-24T22:30:00+03:00'}, to: {time: '2016-04-24T23:20:00+03:00'}};
+    const renderedComponent = shallow(<ConnectionCard connection={conn}/>);
+
+    expect(renderedComponent.first().childAt(0).childAt(1).props().className).to.eql('connection-time');
+    expect(renderedComponent.first().childAt(0).childAt(1).text()).to.eql('22:30 - 23:20');
+  });
+
 });

@@ -1,16 +1,21 @@
 import React from 'react';
 import Paper from 'material-ui/lib/paper';
+import moment from 'moment';
 import './connection-card.css';
 
 export default React.createClass({
 
-  getDefaultProps: function () {
+  getDefaultProps() {
     return {
       connection: {
         from: {},
         to: {}
       }
     }
+  },
+
+  formatTime(isoTime) {
+    return moment(isoTime).format('HH:mm');
   },
 
   style: {
@@ -29,7 +34,7 @@ export default React.createClass({
               <span>{ this.props.connection.to.name }</span>
             </div>
             <div className="connection-time">
-              <span>08:00 - 08:45 (45min)</span>
+              <span>{ this.formatTime(this.props.connection.from.time) } - { this.formatTime(this.props.connection.to.time) }</span>
             </div>
           </div>
         </Paper>
