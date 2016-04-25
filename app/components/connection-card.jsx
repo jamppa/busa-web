@@ -34,7 +34,7 @@ export default React.createClass({
               <span>{ this.props.connection.to.name }</span>
             </div>
             <div className="connection-time">
-              <span>{ this.formatTime(this.props.connection.from.time) } - { this.formatTime(this.props.connection.to.time) }</span>
+              <span>{this.formatTime(this.props.connection.from.time)} - {this.formatTime(this.props.connection.to.time)}</span>
             </div>
           </div>
         </Paper>
