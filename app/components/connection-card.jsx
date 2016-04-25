@@ -14,6 +14,10 @@ export default React.createClass({
     }
   },
 
+  getConnection() {
+    return this.props.connection || {};
+  },
+
   formatTime(isoTime) {
     return moment(isoTime).format('HH:mm');
   },
@@ -29,12 +33,12 @@ export default React.createClass({
         <Paper zDepth={2} style={this.style}>
           <div className="connection-card-container">
             <div className="connection">
-              <span>{ this.props.connection.from.name }</span>
+              <span>{ this.getConnection().from.name }</span>
               <span>-</span>
-              <span>{ this.props.connection.to.name }</span>
+              <span>{ this.getConnection().to.name }</span>
             </div>
             <div className="connection-time">
-              <span>{this.formatTime(this.props.connection.from.time)} - {this.formatTime(this.props.connection.to.time)}</span>
+              <span>{this.formatTime(this.getConnection().from.time)} - {this.formatTime(this.getConnection().to.time)}</span>
             </div>
           </div>
         </Paper>
