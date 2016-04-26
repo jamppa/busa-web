@@ -7,5 +7,10 @@ describe('Connection action creator', () => {
     const createdAction = actions.requestConnectionsDeparturingNext();
     expect(createdAction).to.eql({ type: actions.REQUEST_CONNECTIONS_DEPARTURING_NEXT });
   });
-    
+
+  it('should create RECEIVE_CONNECTIONS typed action', () => {
+    const createdAction = actions.receiveConnections([{id: '1'}]);
+    expect(createdAction).to.eql({ type: actions.RECEIVE_CONNECTIONS, payload: { connections: [{id: '1'}]} });
+  });
+
 });
