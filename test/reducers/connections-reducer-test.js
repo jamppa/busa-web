@@ -12,9 +12,7 @@ describe('Connections Reducer', () => {
 
     const newState = connections(oldState, action);
 
-    expect(newState).to.eql(fromJS({
-      isLoading: true
-    }));
+    expect(newState).to.eql(fromJS({isLoading: true}));
   });
 
   it('should handle REQUEST_CONNECTIONS_DEPARTURING_NEXT -action without initial state', () => {
@@ -22,8 +20,17 @@ describe('Connections Reducer', () => {
     const action = actions.requestConnectionsDeparturingNext();
     const newState = connections(undefined, action);
 
-    expect(newState).to.eql(fromJS({
-      isLoading: true
-    }));
+    expect(newState).to.eql(fromJS({isLoading: true}));
   });
+
+  it('should just return the old state when action type is invalid or not supported', () => {
+
+    const action = { type: 'INVALID_OR_NOT_SUPPORTED' };
+    const oldState = fromJS({isLoading: true});
+
+    const newState = connections(oldState, action);
+
+    expect(newState).to.eql(oldState);
+  });
+
 });
