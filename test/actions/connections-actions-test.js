@@ -1,7 +1,7 @@
-import * as actions from '../../app/actions/connection-actions';
+import * as actions from '../../app/actions/connections-actions';
 import { expect } from 'chai';
 
-describe('Connection action creator', () => {
+describe('Connections Actions', () => {
 
   it('should create REQUEST_CONNECTIONS_DEPARTURING_NEXT typed action', () => {
     const createdAction = actions.requestConnectionsDeparturingNext();

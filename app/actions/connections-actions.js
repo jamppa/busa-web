@@ -11,7 +11,7 @@ export const receiveConnections = (connections) => {
   return {
     type: RECEIVE_CONNECTIONS,
     payload: {
-      connections: connections
+      connections
     }
   };
 }
