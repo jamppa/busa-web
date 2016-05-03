@@ -17,5 +17,13 @@ describe('Connections Reducer', () => {
     }));
   });
 
-  
+  it('should handle REQUEST_CONNECTIONS_DEPARTURING_NEXT -action without initial state', () => {
+
+    const action = actions.requestConnectionsDeparturingNext();
+    const newState = connections(undefined, action);
+
+    expect(newState).to.eql(fromJS({
+      isLoading: true
+    }));
+  });
 });
