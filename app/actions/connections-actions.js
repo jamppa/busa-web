@@ -1,5 +1,5 @@
 export const REQUEST_CONNECTIONS_DEPARTURING_NEXT = 'REQUEST_CONNECTIONS_DEPARTURING_NEXT';
-export const RECEIVE_CONNECTIONS = 'RECEIVE_CONNECTIONS';
+export const RECEIVE_CONNECTIONS_DEPARTURING_NEXT = 'RECEIVE_CONNECTIONS_DEPARTURING_NEXT';
 
 export function requestConnectionsDeparturingNext() {
   return {
@@ -7,9 +7,9 @@ export function requestConnectionsDeparturingNext() {
   };
 }
 
-export const receiveConnections = (connections) => {
+export const receiveConnectionsDeparturingNext = (connections) => {
   return {
-    type: RECEIVE_CONNECTIONS,
+    type: RECEIVE_CONNECTIONS_DEPARTURING_NEXT,
     payload: {
       connections
     }

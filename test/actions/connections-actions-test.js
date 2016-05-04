@@ -8,9 +8,10 @@ describe('Connections Actions', () => {
     expect(createdAction).to.eql({ type: actions.REQUEST_CONNECTIONS_DEPARTURING_NEXT });
   });
 
-  it('should create RECEIVE_CONNECTIONS typed action', () => {
-    const createdAction = actions.receiveConnections([{id: '1'}]);
-    expect(createdAction).to.eql({ type: actions.RECEIVE_CONNECTIONS, payload: { connections: [{id: '1'}]} });
+  it('should create RECEIVE_CONNECTIONS_DEPARTURING_NEXT typed action with payload', () => {
+    const connection = { id: '123' };
+    const createdAction = actions.receiveConnectionsDeparturingNext([connection]);
+    expect(createdAction).to.eql({ type: actions.RECEIVE_CONNECTIONS_DEPARTURING_NEXT, payload: { connections: [connection]} });
   });
 
 });
