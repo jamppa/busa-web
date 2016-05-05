@@ -9,9 +9,12 @@ const actionHandlers = {
   [actions.REQUEST_CONNECTIONS_DEPARTURING_NEXT]: handleRequestConnectionsDeparturingNext
 };
 
-const initialState = fromJS({isLoading: false});
+export const initialState = fromJS({
+  isLoading: false,
+  departuringNext: []
+});
 
-export default function connections(state = initialState, action) {
+export function connections(state = initialState, action) {
   const handler = actionHandlers[action.type];
   if (handler) {
     return handler(state);
