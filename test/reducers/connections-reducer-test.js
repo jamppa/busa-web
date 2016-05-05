@@ -34,4 +34,15 @@ describe('Connections Reducer', () => {
     expect(newState).to.eql(oldState);
   });
 
+  it('should handle RECEIVE_CONNECTIONS_DEPARTURING_NEXT -action by setting the connections to state', () => {
+
+    const connection = { id: '123' };
+    const action = actions.receiveConnectionsDeparturingNext([connection, connection]);
+    const oldState = reducer.initialState.merge({isLoading: true});
+
+    const newState = reducer.connections(oldState, action);
+
+    expect(newState).to.eql(oldState.merge({isLoading: false, connectionsDeparturingNext: [connection, connection]}));
+  });
+
 });
