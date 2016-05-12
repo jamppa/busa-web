@@ -8,7 +8,7 @@ const handleRequestConnectionsDeparturingNext = (state) => {
 const handleReceiveConnectionsDeparturingNext = (state, action) => {
   return state.merge({
     isLoading: false,
-    connectionsDeparturingNext: action.payload.connections
+    departuringNext: action.payload.connections
   });
 }
 

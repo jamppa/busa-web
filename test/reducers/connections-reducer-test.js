@@ -42,7 +42,7 @@ describe('Connections Reducer', () => {
 
     const newState = reducer.connections(oldState, action);
 
-    expect(newState).to.eql(oldState.merge({isLoading: false, connectionsDeparturingNext: [connection, connection]}));
+    expect(newState).to.eql(oldState.merge({isLoading: false, departuringNext: [connection, connection]}));
   });
 
 });
