@@ -1,3 +1,5 @@
+import * as connectionsApi from '../api/connections-api';
+
 export const REQUEST_CONNECTIONS_DEPARTURING_NEXT = 'REQUEST_CONNECTIONS_DEPARTURING_NEXT';
 export const RECEIVE_CONNECTIONS_DEPARTURING_NEXT = 'RECEIVE_CONNECTIONS_DEPARTURING_NEXT';
 
@@ -7,11 +9,21 @@ export function requestConnectionsDeparturingNext() {
   };
 }
 
-export const receiveConnectionsDeparturingNext = (connections) => {
+export function receiveConnectionsDeparturingNext(connections) {
   return {
     type: RECEIVE_CONNECTIONS_DEPARTURING_NEXT,
     payload: {
       connections
     }
   };
+}
+
+export function fetchConnectionsDeparturingNext() {
+  return (dispatch) => {
+    dispatch(requestConnectionsDeparturingNext());
+    return connectionsApi.getConnectionsDeparturingNext()
+      .then(
+        response => dispatch(receiveConnectionsDeparturingNext(response.json())),
+        err => {});
+  }
 }
