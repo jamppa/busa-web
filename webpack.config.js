@@ -70,7 +70,10 @@ if(TARGET === 'start' || !TARGET) {
       ]
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.DefinePlugin({
+        API_URL: '"http://localhost:3000/api"'
+      })
     ]
   });
 }
@@ -99,7 +102,7 @@ if(TARGET === 'build' || TARGET === 'stats') {
       new CleanPlugin([PATHS.build]),
       new ExtractTextPlugin('[name].[chunkhash].css'),
       new webpack.optimize.CommonsChunkPlugin({names: ['vendor', 'manifest']}),
-      new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'}),
+      new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"', API_URL: '""'}),
       new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}})
     ]
   });
