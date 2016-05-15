@@ -23,7 +23,7 @@ export function fetchConnectionsDeparturingNext() {
     dispatch(requestConnectionsDeparturingNext());
     return connectionsApi.getConnectionsDeparturingNext()
       .then(
-        response => dispatch(receiveConnectionsDeparturingNext(response.json())),
+        response => dispatch(receiveConnectionsDeparturingNext(response.body)),
         err => {});
   }
 }
