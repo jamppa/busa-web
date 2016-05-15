@@ -25,14 +25,16 @@ export const DeparturingNext = React.createClass({
   render() {
 
     const connectionCards = this.props.connections.map((conn, index) => {
-      return (<ConnectionCard key={index} connection={conn} />);
+      return (
+        <div key={index} className="pure-u-1 pure-u-md-1-4">
+          <ConnectionCard connection={conn} />
+        </div>
+        );
     });
 
     return(
       <div className="pure-g">
-        <div className="pure-u-1 pure-u-md-1-4">
-          {connectionCards}
-        </div>
+        {connectionCards}
       </div>
     );
   }
