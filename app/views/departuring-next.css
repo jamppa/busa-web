@@ -1,0 +1,8 @@
+.departuring-next .heading {
+  display: flex;
+  color: #9E9E9E;
+}
+
+.departuring-next .heading h2 {
+  margin-left: 2rem;
+}
