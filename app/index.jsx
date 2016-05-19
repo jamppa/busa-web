@@ -18,14 +18,6 @@ injectTapEventPlugin();
 const busaReducers = combineReducers(reducers);
 const store = createStore(busaReducers, applyMiddleware(thunkMiddleware));
 
-/*store.dispatch({
-  type: 'RECEIVE_CONNECTIONS_DEPARTURING_NEXT',
-  payload: {
-    connections: [{from: {name: 'Nummela', time: '2016-04-24T22:30:00+03:00'}, to: {name: 'Helsinki', time: '2016-04-24T23:20:00+03:00'}}]
-  }
-});
-*/
-
 const BusaRouter = React.createClass({
 
   renderRouter() {
