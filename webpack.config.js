@@ -65,7 +65,7 @@ if(TARGET === 'start' || !TARGET) {
         {
           test: /\.css$/,
           loaders: ['style', 'css'],
-          include: [PATHS.app, 'node_modules/purecss/build/']
+          include: PATHS.app
         }
       ]
     },
@@ -81,7 +81,7 @@ if(TARGET === 'start' || !TARGET) {
 if(TARGET === 'build' || TARGET === 'stats') {
   module.exports = merge(common, {
     entry: {
-      vendor: Object.keys(pkg.dependencies)
+      vendor: Object.keys(pkg.dependencies).filter(v => v !== 'purecss')
     },
     output: {
       path: PATHS.build,

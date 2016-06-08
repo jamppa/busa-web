@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,300,500');
-@import url('../../node_modules/purecss/build/pure-min.css');
-@import url('../../node_modules/purecss/build/grids-responsive-min.css');
+@import url('../../node_modules/purecss/build/pure.css');
+@import url('../../node_modules/purecss/build/grids-responsive.css');
 
 body {
   background: #ffffff;
