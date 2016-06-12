@@ -6,5 +6,6 @@ services:
     command: /bin/bash
     volumes:
       - ../:/code
+      - ~/.s3cfg:/code/.s3cfg
     ports:
       - "8000:8000"

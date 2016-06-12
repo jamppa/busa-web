@@ -8,7 +8,8 @@
     "build": "webpack",
     "start": "PORT=8000 webpack-dev-server --progress --colors",
     "test": "mocha --compilers css:./test/css-import-to-noop.js,js:babel-core/register \"test/**/*@(.js|.jsx)\"",
-    "test:tdd": "npm run test -- --watch"
+    "test:tdd": "npm run test -- --watch",
+    "deploy": "s3-cli sync --delete-removed ./build/ s3://busaweb/"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +29,7 @@
     "html-webpack-template": "^4.0.0",
     "mocha": "^2.4.5",
     "react-addons-test-utils": "^0.14.8",
+    "s3-cli": "^0.13.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1",
