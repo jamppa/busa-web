@@ -24,7 +24,6 @@ export default React.createClass({
 
   style: {
     textAlign: 'center',
-    fontSize: 'x-large',
     margin: '1em'
   },
 
@@ -33,12 +32,12 @@ export default React.createClass({
         <Paper zDepth={2} style={this.style}>
           <div className="connection-card-container">
             <div className="connection">
-              <span>{ this.getConnection().from.name }</span>
-              <span>-</span>
-              <span>{ this.getConnection().to.name }</span>
+              <h2>{ this.getConnection().from.name }</h2>
+              <h2>-</h2>
+              <h2>{ this.getConnection().to.name }</h2>
             </div>
             <div className="connection-time">
-              <span>{this.formatTime(this.getConnection().from.time)} - {this.formatTime(this.getConnection().to.time)}</span>
+              <h3>{this.formatTime(this.getConnection().from.time)} - {this.formatTime(this.getConnection().to.time)}</h3>
             </div>
           </div>
         </Paper>

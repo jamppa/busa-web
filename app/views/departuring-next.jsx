@@ -34,7 +34,7 @@ export const DeparturingNext = React.createClass({
 
     const connectionCards = this.props.connections.map((conn, index) => {
       return (
-        <div key={index} className="pure-u-1 pure-u-md-1-3 pure-u-lg-1-4">
+        <div key={index} className="pure-u-md-1 pure-u-lg-1-4">
           <ConnectionCard connection={conn} />
         </div>
         );
@@ -44,7 +44,7 @@ export const DeparturingNext = React.createClass({
       <div className="pure-g departuring-next">
         <div className="pure-u-1">
           <div className="heading">
-            <h2>SEURAAVAT LÄHDÖT</h2>
+            <h1>SEURAAVAT LÄHDÖT</h1>
           </div>
         </div>
         {connectionCards}
