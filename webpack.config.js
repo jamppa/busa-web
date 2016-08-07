@@ -102,7 +102,7 @@ if(TARGET === 'build' || TARGET === 'stats') {
       new CleanPlugin([PATHS.build]),
       new ExtractTextPlugin('[name].[chunkhash].css'),
       new webpack.optimize.CommonsChunkPlugin({names: ['vendor', 'manifest']}),
-      new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"', API_URL: '""'}),
+      new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"', API_URL: '"http://146.185.164.49:3000/api"'}),
       new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}})
     ]
   });
