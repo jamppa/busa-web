@@ -24,7 +24,8 @@ export default React.createClass({
 
   style: {
     textAlign: 'center',
-    margin: '1em'
+    margin: '1em',
+    cursor: 'pointer'
   },
 
   render() {

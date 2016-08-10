@@ -9,12 +9,17 @@ export default React.createClass({
     backgroundColor: Colors.grey700
   },
 
+  titleStyle: {
+    fontSize: '2rem',
+    letterSpacing: '1rem'
+  },
+
   render: function() {
     return (
       <div>
         <div className="pure-g">
           <div className="pure-u-md-1">
-            <AppBar title="B U S A - 2 8 0" style={this.style}/>
+            <AppBar title="MAALAISBUSSIT" style={this.style} titleStyle={this.titleStyle} showMenuIconButton={false} />
           </div>
         </div>
 
