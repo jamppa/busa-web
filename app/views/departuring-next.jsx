@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import * as actions from '../actions/connections-actions';
 
@@ -35,7 +36,9 @@ export const DeparturingNext = React.createClass({
     const connectionCards = this.props.connections.map((conn, index) => {
       return (
         <div key={index} className="pure-u-md-1 pure-u-lg-1-4">
-          <ConnectionCard connection={conn} />
+          <Link to={'/connection/' + conn.from.name + '/' + conn.to.name}>
+            <ConnectionCard connection={conn} />
+          </Link>
         </div>
         );
     });
@@ -44,7 +47,7 @@ export const DeparturingNext = React.createClass({
       <div className="pure-g departuring-next">
         <div className="pure-u-1">
           <div className="heading">
-            <h1>SEURAAVAT LÄHDÖT</h1>
+            <h1 className="uppercase">seuraavat lähdöt</h1>
           </div>
         </div>
         {connectionCards}

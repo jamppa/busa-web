@@ -9,6 +9,7 @@ import thunkMiddleware from 'redux-thunk';
 
 import App from './app.jsx';
 import { DeparturingNextConnected } from './views/departuring-next.jsx';
+import { ConnectionConnected } from './views/connection.jsx';
 import * as reducers from './reducers';
 
 import './styles/main.css';
@@ -25,6 +26,7 @@ const BusaRouter = React.createClass({
       <Router history={hashHistory}>
           <Route path="/" component={App}>
             <IndexRoute component={DeparturingNextConnected} />
+            <Route path="/connection/:from/:to" component={ConnectionConnected} />
           </Route>
       </Router>
     );
