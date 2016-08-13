@@ -14,4 +14,11 @@ describe('Connections Actions', () => {
     expect(createdAction).to.eql({ type: actions.RECEIVE_CONNECTIONS_DEPARTURING_NEXT, payload: { connections: [connection]} });
   });
 
+  it('should create REQUEST_CONNECTIONS_BY_PLACES action', () => {
+    const departurePlace = 'Nummela';
+    const arrivalPlace = 'Helsinki';
+    const createdAction = actions.requestConnectionsByPlaces(departurePlace, arrivalPlace);
+    expect(createdAction).to.eql({ type: actions.REQUEST_CONNECTIONS_BY_PLACES, payload: { departurePlace, arrivalPlace } });
+  });
+
 });

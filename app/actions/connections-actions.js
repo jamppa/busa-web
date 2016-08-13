@@ -1,11 +1,22 @@
 import * as connectionsApi from '../api/connections-api';
 
 export const REQUEST_CONNECTIONS_DEPARTURING_NEXT = 'REQUEST_CONNECTIONS_DEPARTURING_NEXT';
+export const REQUEST_CONNECTIONS_BY_PLACES = 'REQUEST_CONNECTIONS_BY_PLACES';
 export const RECEIVE_CONNECTIONS_DEPARTURING_NEXT = 'RECEIVE_CONNECTIONS_DEPARTURING_NEXT';
 
 export function requestConnectionsDeparturingNext() {
   return {
     type: REQUEST_CONNECTIONS_DEPARTURING_NEXT
+  };
+}
+
+export function requestConnectionsByPlaces(departurePlace, arrivalPlace) {
+  return {
+    type: REQUEST_CONNECTIONS_BY_PLACES,
+    payload: {
+      departurePlace,
+      arrivalPlace
+    }
   };
 }
 
