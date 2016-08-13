@@ -16,10 +16,8 @@ describe('Connections Actions', () => {
   });
 
   it('should create REQUEST_CONNECTIONS_BY_PLACES action', () => {
-    const departurePlace = 'Nummela';
-    const arrivalPlace = 'Helsinki';
-    const createdAction = actions.requestConnectionsByPlaces(departurePlace, arrivalPlace);
-    expect(createdAction).to.eql({ type: actions.REQUEST_CONNECTIONS_BY_PLACES, payload: { departurePlace, arrivalPlace } });
+    const createdAction = actions.requestConnectionsByPlaces();
+    expect(createdAction).to.eql({ type: actions.REQUEST_CONNECTIONS_BY_PLACES });
   });
 
   it('should create RECEIVE_CONNECTIONS_BY_PLACES action', () => {

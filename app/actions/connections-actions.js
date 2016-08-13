@@ -11,13 +11,9 @@ export function requestConnectionsDeparturingNext() {
   };
 }
 
-export function requestConnectionsByPlaces(departurePlace, arrivalPlace) {
+export function requestConnectionsByPlaces() {
   return {
-    type: REQUEST_CONNECTIONS_BY_PLACES,
-    payload: {
-      departurePlace,
-      arrivalPlace
-    }
+    type: REQUEST_CONNECTIONS_BY_PLACES
   };
 }
 

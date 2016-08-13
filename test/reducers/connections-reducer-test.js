@@ -5,6 +5,8 @@ import { expect } from 'chai';
 
 describe('Connections Reducer', () => {
 
+  const connection = { id: '123' };
+
   it('should handle REQUEST_CONNECTIONS_DEPARTURING_NEXT -action', () => {
 
     const action = actions.requestConnectionsDeparturingNext();
@@ -36,13 +38,32 @@ describe('Connections Reducer', () => {
 
   it('should handle RECEIVE_CONNECTIONS_DEPARTURING_NEXT -action by setting the connections to state', () => {
 
-    const connection = { id: '123' };
     const action = actions.receiveConnectionsDeparturingNext([connection, connection]);
     const oldState = reducer.initialState.merge({isLoading: true});
 
     const newState = reducer.connections(oldState, action);
 
     expect(newState).to.eql(oldState.merge({isLoading: false, departuringNext: [connection, connection]}));
+  });
+
+  it('should handle REQUEST_CONNECTIONS_BY_PLACES action', () => {
+
+    const action = actions.requestConnectionsByPlaces();
+    const oldState = reducer.initialState;
+
+    const newState = reducer.connections(oldState, action);
+
+    expect(newState).to.eql(oldState.merge({isLoadingByPlaces: true}));
+  });
+
+  it('should handle RECEIVE_CONNECTIONS_BY_PLACES action', () => {
+
+    const action = actions.receiveConnectionsByPlaces([connection, connection]);
+    const oldState = reducer.initialState.merge({ isLoadingByPlaces: true });
+
+    const newState = reducer.connections(oldState, action);
+
+    expect(newState).to.eql(oldState.merge({ isLoadingByPlaces: false, byPlaces: [connection, connection] }));
   });
 
 });
