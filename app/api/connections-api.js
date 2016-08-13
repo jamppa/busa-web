@@ -1,7 +1,9 @@
 import * as busaApi from './busa-api';
 
-const CONNECTIONS_DEPARTURING_NEXT = '/connections/departuring_next';
-
 export function getConnectionsDeparturingNext() {
-  return busaApi.get(CONNECTIONS_DEPARTURING_NEXT);
+  return busaApi.get('/connections/departuring_next');
+}
+
+export function getConnectionsByPlaces(from, to) {
+  return busaApi.get(`/connections/${from}/${to}`);
 }

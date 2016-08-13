@@ -35,12 +35,24 @@ export function receiveConnectionsByPlaces(connections) {
   };
 }
 
+// Async actions
+
 export function fetchConnectionsDeparturingNext() {
   return (dispatch) => {
     dispatch(requestConnectionsDeparturingNext());
     return connectionsApi.getConnectionsDeparturingNext()
       .then(
         response => dispatch(receiveConnectionsDeparturingNext(response.body)),
+        err => {});
+  }
+}
+
+export function fetchConnectionsByPlaces(from, to) {
+  return (dispatch) => {
+    dispatch(requestConnectionsByPlaces());
+    return connectionsApi.getConnectionsByPlaces(from, to)
+      .then(
+        response => dispatch(receiveConnectionsByPlaces(response.body)),
         err => {});
   }
 }
