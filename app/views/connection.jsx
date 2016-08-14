@@ -8,6 +8,22 @@ import ConnectionCard from '../components/connection-card.jsx';
 
 const Connection = React.createClass({
 
+  propTypes: {
+    fetchConnectionsByPlaces: React.PropTypes.func.isRequired,
+    connections: React.PropTypes.array.isRequired
+  },
+
+  getDefaultProps() {
+    return {
+      fetchConnectionsByPlaces: () => {},
+      connections: []
+    };
+  },
+
+  componentDidMount() {
+    this.props.fetchConnectionsByPlaces(this.props.params.from, this.props.params.to);
+  },
+
   render() {
     return (
       <div className="pure-g departuring-next">
@@ -21,8 +37,10 @@ const Connection = React.createClass({
   }
 });
 
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = (state) => {
+  return {
+    connections: state.connections.get('byPlaces').toJS()
+  };
 }
 
 export const ConnectionConnected = connect(mapStateToProps, actions)(Connection);
