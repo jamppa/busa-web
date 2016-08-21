@@ -25,6 +25,16 @@ const Connection = React.createClass({
   },
 
   render() {
+
+    const connectionCards = this.props.connections.map((conn, index) => {
+      return (
+        <div key={index} className="pure-u-md-1 pure-u-lg-1-4">
+            <ConnectionCard connection={conn} />
+        </div>
+        );
+    });
+
+
     return (
       <div className="pure-g departuring-next">
         <div className="pure-u-1">
@@ -32,6 +42,7 @@ const Connection = React.createClass({
             <h1 className="uppercase">seuraavat lähdöt / {this.props.params.from} - {this.props.params.to}</h1>
           </div>
         </div>
+        { connectionCards }
       </div>
     );
   }
