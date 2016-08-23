@@ -5,6 +5,7 @@ import * as actions from '../actions/connections-actions';
 
 import FloatingActionButton from 'material-ui/lib/floating-action-button';
 import RefreshIcon from 'material-ui/lib/svg-icons/action/cached';
+import CircularProgress from 'material-ui/lib/circular-progress';
 import ConnectionCard from '../components/connection-card.jsx';
 
 import './departuring-next.css';
@@ -31,8 +32,7 @@ export const DeparturingNext = React.createClass({
     this.props.fetchConnectionsDeparturingNext();
   },
 
-  render() {
-
+  renderConnectionCards() {
     const connectionCards = this.props.connections.map((conn, index) => {
       return (
         <div key={index} className="pure-u-md-1 pure-u-lg-1-4">
@@ -42,6 +42,26 @@ export const DeparturingNext = React.createClass({
         </div>
         );
     });
+    return connectionCards;
+  },
+
+  renderSpinner() {
+    return (
+      <div className="pure-u-1" style={{textAlign: 'center'}}>
+        <CircularProgress size={2} />
+      </div>
+    );
+  },
+
+  render() {
+
+    let content;
+    if(this.props.isLoading) {
+      content = this.renderSpinner();
+    }
+    else {
+      content = this.renderConnectionCards();
+    }
 
     return(
       <div className="pure-g departuring-next">
@@ -50,12 +70,7 @@ export const DeparturingNext = React.createClass({
             <h1 className="uppercase">seuraavat lähdöt</h1>
           </div>
         </div>
-        {connectionCards}
-        <div className="pure-u-1">
-          <FloatingActionButton backgroundColor="#78909C" style={{margin: '2rem'}} onClick={this.handleRefreshButtonOnClick}>
-            <RefreshIcon />
-          </FloatingActionButton>
-        </div>
+        {content}
       </div>
     );
   }
@@ -63,7 +78,8 @@ export const DeparturingNext = React.createClass({
 
 function mapStateToProps(state) {
   return {
-    connections: state.connections.get('departuringNext').toJS()
+    connections: state.connections.get('departuringNext').toJS(),
+    isLoading: state.connections.get('isLoading')
   };
 }
 
