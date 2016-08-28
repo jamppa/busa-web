@@ -5,7 +5,7 @@ import * as actions from '../actions/connections-actions';
 
 import FloatingActionButton from 'material-ui/lib/floating-action-button';
 import RefreshIcon from 'material-ui/lib/svg-icons/action/cached';
-import CircularProgress from 'material-ui/lib/circular-progress';
+import LoaderSpinner from '../components/loader-spinner.jsx';
 import ConnectionCard from '../components/connection-card.jsx';
 
 import './departuring-next.css';
@@ -48,7 +48,7 @@ export const DeparturingNext = React.createClass({
   renderSpinner() {
     return (
       <div className="pure-u-1" style={{textAlign: 'center'}}>
-        <CircularProgress size={2} />
+        <LoaderSpinner />
       </div>
     );
   },
